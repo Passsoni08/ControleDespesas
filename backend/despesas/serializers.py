@@ -26,3 +26,14 @@ class DespesaSerializer(serializers.ModelSerializer):
             'atualizado_em',
         ]
         read_only_fields = ['id', 'criado_em', 'atualizado_em']
+
+    def validate_valor(self, value):
+        if value <= 0:
+            raise serializers.ValidationError('O valor deve ser maior que zero.')
+        return value
+
+    def validate_descricao(self, value):
+        cleaned = value.strip()
+        if not cleaned:
+            raise serializers.ValidationError('A descrição é obrigatória.')
+        return cleaned
