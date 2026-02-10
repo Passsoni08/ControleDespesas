@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-color-scheme: light;
-}
+@layer base {
+  :root {
+    color-scheme: light;
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+  }
 
-body {
-@apply bg-background text-foreground;
+  body {
+    @apply bg-background text-foreground;
+  }
 }
