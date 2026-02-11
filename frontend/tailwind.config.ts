@@ -7,12 +7,7 @@ const config: Config = {
     './lib/**/*.{ts,tsx}',
   ],
   theme: {
-    extend: {
-      colors: {
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
